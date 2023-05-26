@@ -34,7 +34,11 @@ pipeline:
                     connectorRef: gcrconnector
                     image: gcr.io/google.com/cloudsdktool/google-cloud-cli:latest
                     shell: Sh
-                    command: gcloud auth -q activate-service-account '--key-file=<+pipeline.variables.gcloud_cred>'
+                    command: |-
+                      echo  <+pipeline.variables.gcloud_cred> /harness/key.json
+                      export GOOGLE_APPLICATION_CREDENTIALS=/harness/key.json
+                      chmod 777  /harness/key.json
+                      gcloud auth activate-service-account --key-file=/harness/key.json
               - step:
                   type: Plugin
                   name: Plugin_1

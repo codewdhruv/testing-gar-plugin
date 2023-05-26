@@ -33,3 +33,11 @@ pipeline:
                   spec:
                     connectorRef: harnessnew
                     image: harnesscommunity/drone-google-artifact-registry:latest
+                    settings:
+                      google_application_credentials: <+secrets.getValue("key.json")>
+                      repository: test-harness
+                      location: us-central1
+                      service_account_email: dhruba@commeng-play.iam.gserviceaccount.com
+                      project_id: commeng-play
+                      format: apt
+                      file: apt-dpkg-ref_5.3.1+nmu2_all.deb

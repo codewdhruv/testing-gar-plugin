@@ -27,13 +27,6 @@ pipeline:
           execution:
             steps:
               - step:
-                  type: Run
-                  name: Run_1
-                  identifier: Run_1
-                  spec:
-                    shell: Sh
-                    command: echo <+pipeline.variables.gcloud_cred>
-              - step:
                   type: Plugin
                   name: Plugin_1
                   identifier: Plugin_1

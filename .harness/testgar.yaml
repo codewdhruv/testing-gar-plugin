@@ -35,9 +35,7 @@ pipeline:
                     image: gcr.io/google.com/cloudsdktool/google-cloud-cli:latest
                     shell: Sh
                     command: |
-                      echo "$(<+secrets.getValue("cred")>)" > /harness/key.json
-                      export GOOGLE_APPLICATION_CREDENTIALS=/harness/key.json
-                      chmod 777 /harness/key.json
+                      echo <+pipeline.variables.gcloud_cred> | base64 -d > key.json
               - step:
                   type: Plugin
                   name: Plugin_1

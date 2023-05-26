@@ -34,10 +34,15 @@ pipeline:
                     connectorRef: harnessnew
                     image: harnesscommunity/drone-google-artifact-registry:1.0.2
                     settings:
-                      google_application_credentials: <+secrets.getValue("keyjson")>
                       repository: testplugin-harness
                       location: us-central1
                       service_account_email: dhruba@commeng-play.iam.gserviceaccount.com
                       project_id: commeng-play
                       format: apt
                       file: apt-dpkg-ref_5.3.1+nmu2_all.deb
+                      google_application_credentials: <+pipeline.variables.gcloud_cred>
+  variables:
+    - name: gcloud_cred
+      type: Secret
+      description: ""
+      value: cred

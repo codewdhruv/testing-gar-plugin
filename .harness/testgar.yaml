@@ -32,7 +32,7 @@ pipeline:
                   identifier: Plugin_1
                   spec:
                     connectorRef: harnessnew
-                    image: harnesscommunity/drone-google-artifact-registry:latest
+                    image: harnesscommunity/drone-google-artifact-registry:1.0.0
                     settings:
                       google_application_credentials: <+secrets.getValue("key.json")>
                       repository: test-harness

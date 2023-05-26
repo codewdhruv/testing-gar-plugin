@@ -51,7 +51,7 @@ pipeline:
                       project_id: commeng-play
                       format: apt
                       file: apt-dpkg-ref_5.3.1+nmu2_all.deb
-                      google_application_credentials: <+pipeline.variables.gcloud_cred>
+                      google_application_credentials: key.json
   variables:
     - name: gcloud_cred
       type: Secret

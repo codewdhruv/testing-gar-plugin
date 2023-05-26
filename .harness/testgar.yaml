@@ -34,7 +34,7 @@ pipeline:
                     connectorRef: gcrconnector
                     image: gcr.io/google.com/cloudsdktool/google-cloud-cli:latest
                     shell: Sh
-                    command: gcloud auth activate-service-account '--key-file=<+pipeline.variables.gcloud_cred>'
+                    command: gcloud auth -q activate-service-account '--key-file=<+pipeline.variables.gcloud_cred>'
               - step:
                   type: Plugin
                   name: Plugin_1

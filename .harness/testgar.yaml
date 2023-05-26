@@ -34,7 +34,7 @@ pipeline:
                     connectorRef: harnessnew
                     image: harnesscommunity/drone-google-artifact-registry:1.0.2
                     settings:
-                      google_application_credentials: <+secrets.getValue("key.json")>
+                      google_application_credentials: <+secrets.getValue("keyjson")>
                       repository: testplugin-harness
                       location: us-central1
                       service_account_email: dhruba@commeng-play.iam.gserviceaccount.com

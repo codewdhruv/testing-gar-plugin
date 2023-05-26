@@ -32,10 +32,10 @@ pipeline:
                   identifier: Plugin_1
                   spec:
                     connectorRef: harnessnew
-                    image: harnesscommunity/drone-google-artifact-registry:1.0.0
+                    image: harnesscommunity/drone-google-artifact-registry:1.0.1
                     settings:
                       google_application_credentials: <+secrets.getValue("key.json")>
-                      repository: test-harness
+                      repository: testplugin-harness
                       location: us-central1
                       service_account_email: dhruba@commeng-play.iam.gserviceaccount.com
                       project_id: commeng-play

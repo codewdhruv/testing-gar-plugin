@@ -45,4 +45,4 @@ pipeline:
     - name: gcloud_cred
       type: Secret
       description: ""
-      value: cred
+      value: cred2

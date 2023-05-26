@@ -35,7 +35,8 @@ pipeline:
                     image: gcr.io/google.com/cloudsdktool/google-cloud-cli:latest
                     shell: Sh
                     command: |
-                      echo "$(<+pipeline.variables.gcloud_cred>)" | base64 -d > key.json
+                      echo "<+pipeline.variables.gcloud_cred>" | base64 -d > key.json
+                      gcloud auth activate-service-account --key-file=key.json
               - step:
                   type: Plugin
                   name: Plugin_1

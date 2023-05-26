@@ -31,7 +31,7 @@ pipeline:
                   name: Run_1
                   identifier: Run_1
                   spec:
-                    connectorRef: harnessnew
+                    connectorRef: gcrconnector
                     image: gcr.io/google.com/cloudsdktool/google-cloud-cli:latest
                     shell: Sh
                     command: gcloud auth activate-service-account --key-file=<+pipeline.variables.gcloud_cred>
